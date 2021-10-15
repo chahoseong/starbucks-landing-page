@@ -14,3 +14,18 @@ searchInputElement.addEventListener('blur', function () {
     searchElement.classList.remove('focused');
     searchInputElement.setAttribute('placeholder', '');
 });
+
+const badgeElement = document.querySelector('header .badges');
+window.addEventListener('scroll', _.throttle(function () {
+    if (window.scrollY > 500) {
+        gsap.to(badgeElement, 0.6, {
+            opacity: 0,
+            display: 'none'
+        });
+    } else {
+        gsap.to(badgeElement, 0.6, {
+            opacity: 1,
+            display: 'block'
+        });
+    }
+}, 300));
