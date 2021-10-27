@@ -63,3 +63,15 @@ new Swiper('.promotion .swiper-container', {
         nextEl: '.promotion .swiper-next',
     }
 });
+
+const promotionElement = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+let isHidePromotion = false;
+promotionToggleBtn.addEventListener('click', function() {
+   isHidePromotion = !isHidePromotion;
+   if (isHidePromotion) {
+       promotionElement.classList.add('hide');
+   } else {
+       promotionElement.classList.remove('hide');
+   }
+});
