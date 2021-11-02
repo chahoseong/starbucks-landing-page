@@ -585,12 +585,19 @@ header .badges .badge {
 }
 
 .youtube {
-
+    position: relative;
+    height: 400px;
+    background-color: royalblue;
 }
 
 .youtube .youtube__area {
     width: 1920px;
     background-color: orange;
+    position: absolute;
+    left: 50%;
+    margin-left: calc(1920px / -2);
+    top: 50%;
+    margin-top: calc(1920px * 9 / 16 / -2);
 }
 
 .youtube .youtube__area::before {
