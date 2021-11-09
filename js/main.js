@@ -95,3 +95,14 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', 0.5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+const spyElements = document.querySelectorAll("section.scroll-spy");
+spyElements.forEach(function (spyElement) {
+    new ScrollMagic
+    .Scene({
+        triggerElement: spyElement,
+        triggerHook: 0.8
+    })
+    .setClassToggle(spyElement, 'show')
+    .addTo(new ScrollMagic.Controller());
+});
