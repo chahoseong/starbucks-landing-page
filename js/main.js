@@ -51,9 +51,9 @@ new Swiper('.promotion .swiper-container', {
     spaceBetween: 10,
     centeredSlides: true,
     loop: true,
-    // autoplay: {
-    //     delay: 5000
-    // },
+    autoplay: {
+        delay: 5000
+    },
     pagination: {
         el: '.promotion .swiper-pagination',
         clickable: true,
@@ -63,6 +63,18 @@ new Swiper('.promotion .swiper-container', {
         nextEl: '.promotion .swiper-next',
     }
 });
+
+new Swiper('.awards .swiper-container', {
+    autoplay: true,
+    loop: true,
+    spaceBeteween: 30,
+    slidesPerView: 5,
+    navigation: {
+        prevEl: '.awards .swiper-prev',
+        nextEl: '.awards .swiper-next',
+    }
+});
+
 
 const promotionElement = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
