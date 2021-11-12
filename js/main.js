@@ -16,6 +16,8 @@ searchInputElement.addEventListener('blur', function () {
 });
 
 const badgeElement = document.querySelector('header .badges');
+const toTopElement = document.querySelector('#to-top');
+
 window.addEventListener('scroll', _.throttle(function () {
     if (window.scrollY > 500) {
         // gsap.to(요소, 지속시간, 속성)
@@ -23,13 +25,27 @@ window.addEventListener('scroll', _.throttle(function () {
             opacity: 0,
             display: 'none'
         });
+
+        gsap.to(toTopElement, 0.2, {
+            x: 0,
+        });
     } else {
         gsap.to(badgeElement, 0.6, {
             opacity: 1,
             display: 'block'
         });
+
+        gsap.to(toTopElement, 0.2, {
+            x: 100,
+        });
     }
 }, 300));
+
+toTopElement.addEventListener('click', function () {
+    gsap.to(window, 0.7, {
+        scrollTo: 0
+    });
+});
 
 const fadeElements = document.querySelectorAll('.visual .fade-in');
 fadeElements.forEach(function (fadeElement, index) {
